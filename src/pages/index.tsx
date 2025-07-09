@@ -32,7 +32,7 @@ export default function Home() {
 
 <ProjectCard
               title="Esta web"
-              description="React + Nextjs, con un formulario simple para el contacto conmigo."
+              description="React, con un formulario simple para el contacto conmigo."
             />
           </div>
         </section>

@@ -1,8 +1,6 @@
-
 import Header from "@/components/Header";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Contacto() {
   const [nombre, setNombre] = useState("");
@@ -43,39 +41,24 @@ export default function Contacto() {
       <main className="min-h-screen bg-black text-white p-8">
         <h1 className="text-4xl font-bold text-cyan-400 mb-6">Contacto</h1>
 
-        <form onSubmit={handleSubmit} className="space-y-4 max-w-md">
-          <Input
-            type="text"
-            placeholder="Tu nombre"
-            value={nombre}
-            onChange={(e) => setNombre(e.target.value)}
-            required
-          />
-          <Input
-            type="email"
-            placeholder="Tu correo"
-            value={correo}
-            onChange={(e) => setCorreo(e.target.value)}
-            required
-          />
-          <Input
-            type="text"
-            placeholder="Tu mensaje"
-            value={mensaje}
-            onChange={(e) => setMensaje(e.target.value)}
-            required
-          />
-          <Button className="bg-cyan-600 hover:bg-cyan-500" type="submit">
-            {estado === "enviando" ? "Enviando..." : "Enviar"}
-          </Button>
+        {/* Motion div con info de contacto */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="bg-gray-900 p-6 rounded-2xl shadow-xl max-w-lg mb-8"
+        >
+          <p className="text-lg mb-2">
+            <span className="font-semibold text-cyan-300">Correo:</span>{" "}
+            rodrigomreidenbach@gmail.com
+          </p>
+          <p className="text-lg">
+            <span className="font-semibold text-cyan-300">Celular:</span>{" "}
+            +56 9 5158 5787
+          </p>
+        </motion.div>
 
-          {estado === "exito" && (
-            <p className="text-green-400">Mensaje enviado correctamente 🙌</p>
-          )}
-          {estado === "error" && (
-            <p className="text-red-500">Ocurrió un error. Intenta de nuevo 😓</p>
-          )}
-        </form>
+        {/* Aquí puedes poner el formulario de contacto si quieres agregarlo después */}
       </main>
     </>
   );
