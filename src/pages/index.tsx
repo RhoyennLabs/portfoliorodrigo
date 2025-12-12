@@ -11,7 +11,12 @@ export default function Home() {
 
         <section className="mt-24 w-full max-w-4xl">
           <h2 className="text-3xl font-bold text-cyan-400 mb-8 text-center">Proyectos</h2>
-
+ <ProjectCard
+              title="Facilherramienta.com"
+              description="Miles de herramientas digitales en una web. generador de noticias y articulos automaticos con IA. programado con Next js con React. conexión a base de datos de postgres y caché con Redis."
+              demo="https://facilherramienta.com/"
+           
+            />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <ProjectCard
               title="Gestor Contable"
@@ -23,17 +28,8 @@ export default function Home() {
               demo="https://angular-instagram-clone.vercel.app/home"
               repoUrl="https://github.com/RhoyennLabs/angular-instagram-clone"
             />
-            <ProjectCard
-              title="Sistema de administración de presupuesto con to-do list para 2 personas"
-              description="Se compone con React y un API de node con Express. entra a la demo con el usuario 'test' y la contraseña 'test':"
-              demo="https://budgetfront.vercel.app/"
-              repoUrl="https://github.com/RhoyennLabs/budgetfront"
-            />
+        
 
-<ProjectCard
-              title="Esta web"
-              description="React, con un formulario simple para el contacto conmigo."
-            />
           </div>
         </section>
       </main>
